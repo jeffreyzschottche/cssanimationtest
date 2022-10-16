@@ -1,0 +1,273 @@
+/* Het canvas waar de animaties in plaats vinden */
+
+.animationCanvas {
+    border: 2px solid black;
+    height: 600px;
+    width: 600px;
+    /* Zet het canvas in het midden */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Het schaakpatroon */
+
+/* zorgt dat div parent in een rij staat */
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+/* zorgt dat vierkant 100 bij 100 is */
+
+.square {
+    width: 100px;
+    height: 100px;
+}
+
+/* maakt vierkant wit of zwart */
+
+.sq-white {
+    animation: square-white-animation 2s linear 0.5s 1 normal forwards;
+    /* naam keyframe, duur, timing is linear, 0.5s delay, normale direction, forwards zorgt dat final state van keyframe blijft. */
+}
+
+.sq-black {
+    animation: square-black-animation 2s linear 0.5s 1 normal forwards;
+    /* naam keyframe, duur, timing is linear, 0.5s delay, normale direction, forwards zorgt dat final state van keyframe blijft. */
+}
+
+/* keyframes om kleur omtedraaien als pagina laad */
+
+@keyframes square-white-animation {
+    0% {
+        background-color: white;
+    }
+    25% {
+        background-color: rgb(211, 211, 211);
+    }
+    50% {
+        background-color: rgb(130, 130, 130);
+    }
+    75% {
+        background-color: rgb(84, 84, 84);
+    }
+    100% {
+        background-color: black;
+    }
+}
+
+@keyframes square-black-animation {
+    0% {
+        background-color: black;
+    }
+    25% {
+        background-color: rgb(84, 84, 84);
+    }
+    50% {
+        background-color: rgb(130, 130, 130);
+    }
+    75% {
+        background-color: rgb(211, 211, 211);
+    }
+    100% {
+        background-color: white;
+    }
+}
+
+/* Pyramide styling & keyframe */
+
+.pyramid {
+    border-bottom: 100px solid yellow;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    height: 0;
+    width: 100px;
+    z-index: 100;
+    margin-top: -6.25em;
+    position: absolute;
+}
+
+.p1 {
+    margin-left: 0em;
+    animation: pyramid-animation-p1 2s linear 0.5s 1 normal forwards;
+}
+
+.p2 {
+    margin-left: 12.5em;
+    animation: pyramid-animation-p2 2s linear 0.5s 1 normal forwards;
+}
+
+.p3 {
+    margin-left: 25em;
+    animation: pyramid-animation-p3 2s linear 0.5s 1 normal forwards;
+}
+
+@keyframes pyramid-animation-p1 {
+    0% {
+        border-bottom-color: black;
+    }
+    50% {
+        border-bottom-color: rgb(96, 96, 9);
+    }
+    100% {
+        border-bottom-color: yellow;
+    }
+}
+
+@keyframes pyramid-animation-p2 {
+    0% {
+        border-bottom-color: black;
+    }
+    50% {
+        border-bottom-color: rgb(96, 9, 9);
+    }
+    100% {
+        border-bottom-color: red;
+    }
+}
+
+@keyframes pyramid-animation-p3 {
+    0% {
+        border-bottom-color: black;
+    }
+    50% {
+        border-bottom-color: rgb(12, 8, 91);
+    }
+    100% {
+        border-bottom-color: blue;
+    }
+}
+
+/* rechthoek styling & keyframes */
+
+.rectangle {
+    height: 200px;
+    width: 500px;
+    background-color: green;
+    animation-name: rectangleAnimation;
+    animation-duration: 4s;
+    position: absolute;
+    z-index: 100;
+    margin-top: -18.5em;
+    animation: rectangle-animation 2s linear 0.5s 1 normal forwards;
+}
+@keyframes rectangle-animation{
+    0%{
+        margin-left: 0em;
+        transform: skew(-15deg);
+    }
+    50%{
+        margin-left: 1.5em;
+        transform: skew(15deg);
+    }
+    100%{
+        margin-left: 3em;
+        transform: skew(0deg);
+    }
+}
+
+
+/* Cirkel styling & keyframes */
+.circle {
+    height: 200px;
+    width: 200px;
+    background-color: rgb(254, 0, 0);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 100;
+    margin-top: -25em;
+    animation: circle-animation 2s linear 0.5s 1 normal forwards;
+  }
+
+@keyframes circle-animation{
+    0%{
+        background: red;
+    }
+    50%{
+        background: rgb(0, 8, 255);
+    }
+    100%{
+        background: purple;
+    }
+}
+
+/* Driehoek styling & keyframes */
+
+
+.triangle{
+    width: 100;
+	height: 100;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+    border-bottom: 50px solid yellow;
+    position: absolute;
+    margin-top: -30em;
+    z-index: 100;
+    animation: triangle-animation 2s linear 0.5s 1 normal forwards;
+}
+
+@keyframes triangle-animation{
+    0%{
+        left: 30%;
+        transform: rotate(20deg);
+    }
+    50%{
+        left: 60%;
+        transform: rotate(40deg);
+    }
+    100%{
+        left: 40%;
+        transform: rotate(0deg);
+    }
+}
+
+/* Ovaal styling en keyframes */
+
+.oval{
+    height: 150px;
+    width: 300px;
+    background-color:orange;
+    border-radius: 50%;
+    z-index: 100;
+    position: absolute;
+    margin-top: -25em;
+    animation: oval-animation 2s linear 0.5s 1 normal forwards;
+}
+@keyframes oval-animation{
+    0%{
+        left: 30%;
+    }
+    50%{
+        left: 40%;
+    }
+    100%{
+        left: 45%;
+    }
+}
+
+/* Streepje styling & keyframes */
+.stripe{
+    height: 300px;
+    width: 20px;
+    background-color: lightskyblue;
+    z-index: 99;
+    position: absolute;
+    margin-top: -30em;
+    animation: stripe-animation 2s linear 0.5s 1 normal forwards;
+}
+@keyframes stripe-animation{
+    0%{
+        transform: rotate(15deg);
+        left: 30%;
+    }
+    50%{
+        transform: rotate(45deg);
+        left: 35%;
+    }  
+    100%{
+        transform: rotate(180deg);
+        left: 50%;
+        top: 70%;
+    }
+}
